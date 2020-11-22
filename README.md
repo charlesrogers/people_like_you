@@ -13,15 +13,15 @@ You are both sent an email, and if you both opt-in, you are connected and you ta
 2. Google forms results are ingested into R
 3. A ranking of potential partners is created based on your & their preferences.
 4. An email is sent via the GmailR api with:
-  - The proposed match's photo (hosted via AWS)
-    - The photo was pulled into the email because each photo was named with the person's member ID).
-  - The public bio section of the proposed match's survey (a breif about-them and some open-eneded questions)
-  - A "Yes, please" and a "No thank you" link
+    - The proposed match's photo (hosted via AWS)
+      - The photo was pulled into the email because each photo was named with the person's member ID).
+    - The public bio section of the proposed match's survey (a breif about-them and some open-eneded questions)
+    - A "Yes, please" and a "No thank you" link
 5. When you click "yes" or "no", their is an api call generated to mixpanel which tracks the custom UTM parameter appended to each link with:
-  - The member ID of person who is receiving the proposed match
-  - The member ID of person who is being suggested
-  - The "Yes" or "No" response
-  - I thought this could be done in Google Analytics, but after some testing I realized that Gmail blocks all UTM parameters to Google Analytics.
+    - The member ID of person who is receiving the proposed match
+    - The member ID of person who is being suggested
+    - The "Yes" or "No" response
+    - I thought this could be done in Google Analytics, but after some testing I realized that Gmail blocks all UTM parameters to Google Analytics.
 6. The responses were ingested from Mixpanel into R via a CSV. 
 7. The mutually acceptable matches (i.e. both parties said "Yes, we'd like to meet" were calculated
 8. An introductory email was sent when there were mutual matches.
